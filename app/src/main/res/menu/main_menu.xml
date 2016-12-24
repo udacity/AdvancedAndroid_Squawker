@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--Copyright (C) 2017 The Android Open Source Project
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -8,8 +9,14 @@
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.-->
-<resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-</resources>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_following_preferences"
+        android:icon="@drawable/ic_follow"
+        android:orderInCategory="200"
+        android:title="@string/menu_title_following_settings"
+        app:showAsAction="ifRoom" />
+</menu>
