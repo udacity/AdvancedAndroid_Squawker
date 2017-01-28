@@ -33,6 +33,9 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <!-- TODO (5) Add your new service here, with an intent filter for action
+        com.google.firebase.INSTANCE_ID_EVENT" -->
+
     </application>
 
 </manifest>
