@@ -41,6 +41,9 @@
             </intent-filter>
         </service>
 
+        <!-- TODO (4) Add your new service here, with an intent filter for action
+        com.google.firebase.MESSAGING_EVENT -->
+
     </application>
 
 </manifest>
