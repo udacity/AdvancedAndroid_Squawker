@@ -38,9 +38,9 @@ dependencies {
     // Preferences Dependencies
     compile 'com.android.support:preference-v7:25.1.0'
 
-    // TODO (3) Add the Firebase libraries and apply the GPS plugin in this file. Make sure to save the
-    // google.services.json file in the app folder. After syncing the changes, you should be able
-    // to send a notification to your app using the Firebase console. The app must be in the
-    // background!
-
+    // Firebase dependency
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
 }
+// Apply the Google Services plugin. Make sure to add the google-services.json file in the app
+// folder. You download it from the Firebase console
+apply plugin: 'com.google.gms.google-services'
