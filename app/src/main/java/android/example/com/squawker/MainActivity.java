@@ -89,6 +89,28 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        // TODO (1) Make a new Service in the fcm package that extends from FirebaseMessagingService.
+        // TODO (2) As part of the new Service - Override onMessageReceived. This method will
+        // be triggered whenever a squawk is received. You can get the data from the squawk
+        // message using getData(). When you send a test message, this data will include the
+        // following key/value pairs:
+        // test: true
+        // author: Ex. "TestAccount"
+        // authorKey: Ex. "key_test"
+        // message: Ex. "Hello world"
+        // date: Ex. 1484358455343
+        // TODO (3) As part of the new Service - If there is message data, get the data using
+        // the keys and do two things with it :
+        // 1. Display a notification with the first 30 character of the message
+        // 2. Use the content provider to insert a new message into the local database
+        // Hint: You shouldn't be doing content provider operations on the main thread.
+        // If you don't know how to make notifications or interact with a content provider
+        // look at the notes in the classroom for help.
+
+
+        // TODO (5) You can delete the code below for getting the extras from a notification message,
+        // since this was for testing purposes and not part of Squawker.
+
         // Gets the extra data from the intent that started the activity. For *notification*
         // messages, this will contain key value pairs stored in the *data* section of the message.
         Bundle extras = getIntent().getExtras();
@@ -97,13 +119,6 @@ public class MainActivity extends AppCompatActivity implements
             // If the key is there, print out the value of "test"
             Log.d(LOG_TAG, "-> Contains: " + extras.getString("test"));
         }
-
-        // TODO COMPLETED (1) Make a new package for your FCM service classes called "fcm"
-        // TODO COMPLETED (2) Create a new Service class that extends FirebaseInstanceIdService.
-        // You'll need to implement the onTokenRefresh method. Simply have it print out
-        // the new token.
-        // TODO COMPLETED (3) Here, in MainActivity, get a token using FirebaseInstanceId.getInstance().getToken()
-        // TODO COMPLETED (4) Get the message from that token and print it in a log statement
 
         // Get token from the ID Service you created and show it in a log
         String token = FirebaseInstanceId.getInstance().getToken();
