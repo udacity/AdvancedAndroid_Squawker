@@ -89,9 +89,6 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
-        // TODO COMPLETED (5) You can delete the code below for getting the extras from a notification message,
-        // since this was for testing purposes and not part of Squawker.
-
         // Get token from the ID Service you created and show it in a log
         String token = FirebaseInstanceId.getInstance().getToken();
         String msg = getString(R.string.message_token_format, token);
