@@ -23,7 +23,7 @@ import android.support.v7.preference.PreferenceFragmentCompat;
 /**
  * Shows the list of instructors you can follow
  */
-// TODO (1) Implement onSharedPreferenceChangeListener
+// TODO (1) Implement OnSharedPreferenceChangeListener
 public class FollowingPreferenceFragment extends PreferenceFragmentCompat {
 
     private final static String LOG_TAG = FollowingPreferenceFragment.class.getSimpleName();
