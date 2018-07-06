@@ -35,4 +35,8 @@
     <string name="follow_summary_not_following">Not Following</string>
     <string name="follow_summary_following">Following</string>
 
+    <string name="channel_name">channel_name</string>
+    <string name="channel_description">channel_description</string>
+    <string name="notification_channel_id">channel_id</string>
+
 </resources>
