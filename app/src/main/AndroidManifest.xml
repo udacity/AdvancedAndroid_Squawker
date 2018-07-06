@@ -10,6 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
             android:name=".MainActivity">
 
@@ -34,10 +36,11 @@
         </activity>
 
 
-        <!-- Id service -->
-        <service android:name=".fcm.SquawkFirebaseInstanceIdService">
+        <!-- Message Service -->
+        <service
+            android:name=".fcm.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
