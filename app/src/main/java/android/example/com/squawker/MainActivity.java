@@ -103,10 +103,6 @@ public class MainActivity extends AppCompatActivity implements
             // the keys and do two things with it :
                 // 1. Display a notification with the first 30 character of the message
                 // 2. Use the content provider to insert a new message into the local database
-                // Hint: You shouldn't be doing content provider operations on the main thread.
-                // If you don't know how to make notifications or interact with a content provider
-                // look at the notes in the classroom for help.
-
 
         // TODO (5) You can delete the code below for getting the extras from a notification message,
         // since this was for testing purposes and not part of Squawker.
