@@ -96,23 +96,12 @@ public class SquawkFirebaseMessageService extends FirebaseMessagingService {
      * @param data Map which has the message data in it
      */
     private void insertSquawk(final Map<String, String> data) {
-
-        // Database operations should not be done on the main thread
-        AsyncTask<Void, Void, Void> insertSquawkTask = new AsyncTask<Void, Void, Void>() {
-
-            @Override
-            protected Void doInBackground(Void... voids) {
-                ContentValues newMessage = new ContentValues();
-                newMessage.put(SquawkContract.COLUMN_AUTHOR, data.get(JSON_KEY_AUTHOR));
-                newMessage.put(SquawkContract.COLUMN_MESSAGE, data.get(JSON_KEY_MESSAGE).trim());
-                newMessage.put(SquawkContract.COLUMN_DATE, data.get(JSON_KEY_DATE));
-                newMessage.put(SquawkContract.COLUMN_AUTHOR_KEY, data.get(JSON_KEY_AUTHOR_KEY));
-                getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, newMessage);
-                return null;
-            }
-        };
-
-        insertSquawkTask.execute();
+        ContentValues newMessage = new ContentValues();
+        newMessage.put(SquawkContract.COLUMN_AUTHOR, data.get(JSON_KEY_AUTHOR));
+        newMessage.put(SquawkContract.COLUMN_MESSAGE, data.get(JSON_KEY_MESSAGE).trim());
+        newMessage.put(SquawkContract.COLUMN_DATE, data.get(JSON_KEY_DATE));
+        newMessage.put(SquawkContract.COLUMN_AUTHOR_KEY, data.get(JSON_KEY_AUTHOR_KEY));
+        getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, newMessage);
     }
 
 
