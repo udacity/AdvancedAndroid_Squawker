@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mAdapter.swapCursor(data);
+        mAdapter.notifyDataSetChanged();
     }
 
     @Override
