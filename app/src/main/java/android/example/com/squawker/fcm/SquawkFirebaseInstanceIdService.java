@@ -17,13 +17,15 @@ package android.example.com.squawker.fcm;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 /**
  * Listens for changes in the InstanceID
  */
-public class SquawkFirebaseInstanceIdService extends FirebaseInstanceIdService {
+public class SquawkFirebaseInstanceIdService extends FirebaseMessagingService {
 
     private static String LOG_TAG = SquawkFirebaseInstanceIdService.class.getSimpleName();
 
@@ -33,15 +35,15 @@ public class SquawkFirebaseInstanceIdService extends FirebaseInstanceIdService {
      * is initially generated so this is where you would retrieve the token.
      */
     @Override
-    public void onTokenRefresh() {
+    public void onNewToken(@NonNull String newToken) {
+        super.onNewToken(newToken);
         // Get updated InstanceID token.
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.d(LOG_TAG, "Refreshed token: " + refreshedToken);
+        Log.d(LOG_TAG, "Refreshed token: " + newToken);
 
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.
-        sendRegistrationToServer(refreshedToken);
+        sendRegistrationToServer(newToken);
     }
 
     /**
