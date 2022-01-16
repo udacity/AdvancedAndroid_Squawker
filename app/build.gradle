@@ -36,4 +36,7 @@ dependencies {
 
     // Preferences Dependencies
     implementation 'com.android.support:preference-v7:25.1.0'
+
+    // Firebase dependency
+    implementation 'com.google.firebase:firebase-messaging:10.0.1'
 }
