@@ -25,12 +25,14 @@
     <string name="follow_key_switch_jlin">key_jlin</string>
     <string name="follow_key_switch_lyla">key_lyla</string>
     <string name="follow_key_switch_nikita">key_nikita</string>
+    <string name="follow_key_switch_sagar">key_sagar</string>
 
     <string name="follow_title_switch_asser">Asser</string>
     <string name="follow_title_switch_cezanne">Cezanne</string>
     <string name="follow_title_switch_jlin">Jessica</string>
     <string name="follow_title_switch_lyla">Lyla</string>
     <string name="follow_title_switch_nikita">Nikita</string>
+    <string name="follow_title_switch_sagar">Sagar</string>
 
     <string name="follow_summary_not_following">Not Following</string>
     <string name="follow_summary_following">Following</string>
