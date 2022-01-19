@@ -34,6 +34,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -86,9 +88,22 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         LoaderManager.getInstance(this).initLoader(LOADER_ID_MESSAGES, null, this);
 
-        // TODO (1) Get the test data here from the extras bundle that came with this intent.
-        // To confirm that the data was passed in, make sure to show the data in a log statement.
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(MainActivity.LOG_TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
 
+                    // Get new FCM registration token
+                    String token = task.getResult();
+
+                    // Log and toast
+                    String msg = getString(R.string.message_token_format, token);
+                    Log.d(MainActivity.LOG_TAG, msg);
+                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                });
+        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
     }
 
     @Override
