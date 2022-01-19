@@ -18,7 +18,7 @@ package android.example.com.squawker;
 
 import android.database.Cursor;
 import android.example.com.squawker.provider.SquawkContract;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,6 +105,8 @@ public class SquawkAdapter extends RecyclerView.Adapter<SquawkAdapter.SquawkView
             case SquawkContract.NIKITA_KEY:
                 holder.authorImageView.setImageResource(R.drawable.nikita);
                 break;
+            case SquawkContract.SAGAR_KEY:
+                holder.authorImageView.setImageResource(R.drawable.test);
             default:
                 holder.authorImageView.setImageResource(R.drawable.test);
         }
