@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements
                     // Log and toast
                     String msg = getString(R.string.message_token_format, token);
                     Log.d(MainActivity.LOG_TAG, msg);
-                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 });
         FirebaseMessaging.getInstance().setAutoInitEnabled(true);
     }
