@@ -17,7 +17,9 @@ package android.example.com.squawker.following;
 
 import android.example.com.squawker.R;
 import android.os.Bundle;
-import android.support.v7.preference.PreferenceFragmentCompat;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreferenceCompat;
 
 
 /**
